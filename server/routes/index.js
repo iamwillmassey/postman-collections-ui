@@ -14,6 +14,10 @@ router.get('/', function (req, res) {
     res.sendFile(path.join(config.root, 'public', 'index.html'));
 });
 
+router.get('/collections', function(req, res) {
+  res.send(newman.getCollections());
+});
+
 router.get('/test', function(req, res) {
   newman.runCollection();
     res.send('test');
