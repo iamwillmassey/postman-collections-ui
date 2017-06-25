@@ -4,6 +4,7 @@
   "description": "Simple web ui to allow non-technical people to run Postman collections for integration testing.",
   "main": "app.js",
   "dependencies": {
+    "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "newman": "^3.7.2"
   },
