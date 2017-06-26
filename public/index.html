@@ -1,20 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta charset="utf-8"/>
-        <title>Index</title>
-    </head>
-    <body>
-        <div id="app"></div>
-        <h1>Hello World!</h1>
 
-        <form action="/collections">
-          <input type="submit" value="Get Collections">
-        </form>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="css/main.css" type="text/css" />
+  <script src="/js/index.js"></script>
+  <title>Postman Collections Tester</title>
+</head>
 
-        <form action="/test">
-          <input type="submit" value="Test Collection">
+<body>
+  <div class="container">
+    <header>
+      <h1>Postman Tester</h1>
+    </header>
+    <article>
+      <section>
+        <p>Test REST services via a Postman collection. Just fill in the form below:</p>
+        <p>To see previously run reports, click <a href="/reports.html">here</a></p>
+        <form method="post">
+          <fieldset class="type-1">
+            <ol>
+              <li>
+                <label for="postmanCollections">Postman Collection:</label>
+                <select name="postmanCollections" id="postmanCollections" class="length-style-1" onchange="prepareTarget();">
+                        <option value="">Please Select</option>
+                        <!-- collections retrieved from server -->
+          						</select>
+              </li>
+            </ol>
+            <div class="button-action">
+              <button onclick="return validateAndSubmit();">Submit</button>
+            </div>
         </form>
-    </body>
+      </section>
+    </article>
+  </div>
+</body>
+
 </html>

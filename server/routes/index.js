@@ -8,19 +8,12 @@ var environment = require('../config/environment');
 
 var config = environment.config;
 
-var newman = require('../newman');
-
 router.get('/', function (req, res) {
     res.sendFile(path.join(config.root, 'public', 'index.html'));
 });
 
-router.get('/collections', function(req, res) {
-  res.send(newman.getCollections());
-});
-
-router.get('/test', function(req, res) {
-  newman.runCollection();
-    res.send('test');
+router.get('/reports.html', function (req, res) {
+    res.sendFile(path.join(config.root, 'public', 'reports.html'));
 });
 
 module.exports = router;
